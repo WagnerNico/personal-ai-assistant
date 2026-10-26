@@ -1,42 +1,30 @@
 # Security and publication notes
 
-Airis is an experimental macOS AI assistant. Tool integrations have meaningful operating-system and account permissions; review the code and grant only permissions you intend.
+Airis is an experimental local-first macOS assistant. It performs limited desktop actions and can access optional third-party services. Review its permission boundaries before use.
 
-## Scope
+## Permissions and data boundaries
 
-- Local model inference is different from end-to-end offline operation. Optional Gmail and web integrations use external networks.
-- Gmail authorization is **read-only**, and messages are treated as untrusted content. Do not use live personal inboxes for public demos.
-- macOS application tools are limited to supported, validated actions. No arbitrary LLM-generated shell execution is intended.
-- Voice cloning needs recordings for which the operator has explicit rights/consent.
+- Qwen language-model inference runs locally on Apple Silicon. Optional web retrieval and Gmail operations require external network access.
+- Gmail connections require explicit OAuth authorization with a read-only scope. Never publish OAuth client secrets, access/refresh tokens, or real message contents.
+- Gmail content and external web pages are untrusted data, not authorization to invoke tools or desktop actions.
+- Supported macOS tool actions are deliberately constrained; the assistant is not intended to run arbitrary LLM-generated shell commands.
+- Voice references and generated samples should only be shared if you hold the relevant rights and have consent when necessary.
 
-## Public release — not yet authorized
+## Public-release checklist
 
-**Do not make the existing development repository public as-is.** The showcase branch shares its underlying Git history with the private `main` branch. Removing files from the branch does not remove old blobs, recordings, machine paths, or possible credentials from history.
+This `personal-ai-assistant` repository was exported into a new Git history from a sanitized development snapshot. The original private project and its earlier commits are **not** part of this repository.
 
-For a truly public showcase:
+Before changing visibility to Public:
 
-1. Export **only the reviewed, sanitized branch working tree**, not its history.
-2. Create a **new, empty repository** with a fresh Git history.
-3. Inspect all exported files, including nested assets, tests, configs, and example data for secret strings, personal identifiers, licensing, account URLs, and private documents.
-4. Run an independent secret scan on the files **and** check that the fresh repository contains only the intended new commit history.
-5. Supply only original or properly licensed demo screenshots and recordings.
-6. Verify a clean install and test representative desktop actions on a local Mac.
-7. Choose a software license intentionally; there is currently no open-source license.
-8. Publish the new repository only after the human owner reviews the export.
+1. Run an independent repository-wide secret and personal-information scan; the initial review was selective, not exhaustive.
+2. Inspect documentation, tests, examples, and embedded text for private identifiers and confidential material.
+3. Review dependencies and third-party licenses, including pretrained models and any audio or images added as demos.
+4. Verify setup and representative actions on a clean macOS installation.
+5. Confirm no reference audio, account tokens, or local environment artifacts have entered new commits.
+6. Decide whether you want to offer an explicit software license. None is currently granted.
 
-Example *local* export procedure from a working clone (replace the destination with a new, separately created local directory; commands must not be run from a directory with uncommitted work):
+Use test accounts and synthetic data in any publicly shared demo. If you find a suspected privacy or security issue, contact the repository owner privately rather than posting secrets in an issue.
 
-```bash
-mkdir -p ../airis-public-export
-git archive showcase/hackathon-2026 | tar -x -C ../airis-public-export
-cd ../airis-public-export
-git init
-git add .
-git commit -m "Initial Airis showcase release"
-```
+## Technical limitations
 
-Before pushing this fresh directory, inspect `git status`, the full file list, and the new Git log. Never push the original `main` or showcase branch history to the public remote.
-
-## Reporting problems
-
-Please contact the repository owner privately if you discover a security or privacy issue. Do not post secrets or real user data in a public issue.
+This is a portfolio/development prototype, not a security-audited product. Permission checks and unit tests do not eliminate all risks of external integrations.
