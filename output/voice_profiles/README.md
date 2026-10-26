@@ -1,10 +1,10 @@
-# Local voice profiles
+# Local voice reference setup
 
-The application supports `low`, `mid`, and `high` voice profiles; `mid` is the default.
+Airis supports `low`, `mid`, and `high` profiles (default: `mid`), but **no WAV reference recordings are included** in this public-facing source snapshot.
 
-**Reference recordings are not part of the showcase source tree.** This is intentional: voice-cloning reference audio may be private or subject to third-party voice rights.
+The default Apple Silicon MLX-TTS implementation in `output/mlx_speech.py` loads the selected profile's `reference.wav`. Consequently, speech preparation or voice replies will fail until you supply a suitable local reference recording.
 
-For voice-cloning experiments, supply your own **consented, correctly licensed** audio at:
+Place your own appropriately licensed or consented WAV recordings here:
 
 ```text
 output/voice_profiles/
@@ -13,8 +13,6 @@ output/voice_profiles/
 └── high/reference.wav
 ```
 
-Each sample must match the spoken transcript expected by `output/prompts.json`. If you use a different recording, pass the correct `reference_text` to `create_voice_prompt`; it must exactly match the reference recording. Sample output audio should likewise be kept local unless you have permission to distribute it.
+You only need the recording(s) for profiles you intend to use. `output/prompts.json` contains the expected transcripts; the supplied recording must match the reference text exactly. To use a different transcript in custom voice-cloning experiments, provide the corresponding `reference_text` through the relevant API.
 
-Voice features relying on absent recordings will not work without local setup. See `output/voices.py` and `output/voice_clone.py` for the current implementation.
-
-Do not commit personal recordings to this repository. Audio that existed in the *private development repository's previous commits* is not removed from history by deleting files in a new branch.
+**Do not commit real voice recordings or personal audio.** The repository's `.gitignore` excludes WAV files in these profile directories. The text-chat workflow does not need reference audio.
