@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+.venv*/
+.env
+.env.*
+!.env.example
+/logs/
+/Airis.app/
+/training/wakeword/runs/
+/input/models/wakeword/
+/input/models/vad/
+/output/voice_profiles/**/*.wav
+/input/recordings/
+/output/recordings/
+*.pem
+*.p12
+*.pfx
+*.key
+# OAuth secrets and tokens never belong in source control.
+client_secret*.json
+credentials.json
+token.json

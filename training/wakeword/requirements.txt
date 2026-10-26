@@ -1,0 +1,4 @@
+# Optional offline training dependencies; not part of desktop startup.
+onnxruntime>=1.20,<2
+onnx>=1.17,<2
+torch>=2.8,<3

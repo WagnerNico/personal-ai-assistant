@@ -1,0 +1,2 @@
+# Apple Silicon processing in the shared .venv.
+mlx-lm>=0.31,<1

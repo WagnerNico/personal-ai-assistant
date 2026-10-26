@@ -1,0 +1,4 @@
+# OAuth sign-in and macOS Keychain storage for read-only Gmail access.
+google-auth-oauthlib>=1.2,<2
+keyring>=25,<26
+requests>=2.32,<3

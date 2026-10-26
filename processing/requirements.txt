@@ -1,0 +1,4 @@
+# Transformers processing and Whisper share the project's .venv with MLX Audio.
+transformers>=5.2.0,<6
+torch>=2.6
+accelerate>=1.12.0,<2

@@ -1,0 +1,9 @@
+# Install in .venv. Microphone and Whisper do not require Qwen TTS.
+numpy>=2,<3
+scipy>=1.15,<2
+sounddevice>=0.5,<1
+onnxruntime>=1.20,<2
+transformers>=5.7,<6
+torch>=2.6
+accelerate>=1.12,<2
+mlx-audio==0.5.8; sys_platform == "darwin" and platform_machine == "arm64"

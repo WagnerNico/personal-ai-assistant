@@ -1,0 +1,51 @@
+{
+  "phrases": ["Hey Airis", "Airis"],
+  "pronunciation": "qwen",
+  "seed": 20261010,
+  "sample_rate": 16000,
+  "window_samples": 32000,
+  "frame_samples": 1280,
+  "embedding_frames": 16,
+  "tts_model": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-bf16",
+  "design_model": "mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-4bit",
+  "reference_text": "Hey Airis. Airis. I am here to help. Please tell me what you would like to do next, and we can work through it together.",
+  "takes": 3,
+  "voice_designs": {
+    "us_female_clear": "An adult female speaker with a clear, conversational American English voice, medium pitch, and natural relaxed delivery.",
+    "us_male_low": "An adult male speaker with a warm low-pitched American English voice, clear articulation, and relaxed conversational delivery.",
+    "uk_female_bright": "An adult female speaker with a bright British English voice, medium-high pitch, and natural conversational delivery.",
+    "uk_male_soft": "An adult male speaker with a soft British English voice, medium pitch, and measured conversational delivery.",
+    "au_female_warm": "An adult female speaker with a warm Australian English voice, medium pitch, and casual natural delivery.",
+    "au_male_clear": "An adult male speaker with a clear Australian English voice, medium-low pitch, and casual natural delivery.",
+    "de_female_english": "An adult female speaker speaking clear English with a light German accent, medium pitch, and natural conversational delivery.",
+    "de_male_english": "An adult male speaker speaking clear English with a light German accent, medium-low pitch, and natural conversational delivery.",
+    "ie_female_light": "An adult female speaker with a light Irish English accent, clear articulation, medium pitch, and natural conversational delivery.",
+    "in_male_english": "An adult male speaker speaking clear English with an Indian English accent, medium pitch, and natural conversational delivery.",
+    "ca_female_low": "An adult female speaker with a low-pitched Canadian English voice, clear articulation, and natural conversational delivery.",
+    "nz_male_bright": "An adult male speaker with a bright New Zealand English accent, medium-high pitch, clear articulation, and natural conversational delivery."
+  },
+  "voices": {
+    "train": ["us_female_clear", "us_male_low", "uk_female_bright", "uk_male_soft", "au_female_warm", "au_male_clear", "de_female_english", "de_male_english"],
+    "validation": ["ie_female_light", "in_male_english"],
+    "test": ["ca_female_low", "nz_male_bright"]
+  },
+  "speeds": [0.85, 1.0, 1.15],
+  "augmentations_per_clip": 8,
+  "steps": 2500,
+  "batch_size": 64,
+  "learning_rate": 0.0005,
+  "max_validation_false_activations_per_hour": 0.5,
+  "negative_phrases": [
+    "Hey Alice.", "Hey Alex.", "Hey Harris.", "Hey Eric.", "Hey Siri.",
+    "Hey there.", "Hello there.", "Are you here?", "The air is cold.",
+    "The air is clear.", "Where is it?", "Here it is.", "How are you?",
+    "What is the time?", "Can you help?", "Please wait.", "All right.",
+    "Good morning.", "Good evening.", "See you later.", "Turn the light on.",
+    "Play some music.", "Read my messages.", "Open the window.", "Close the door.",
+    "I need a moment.", "Tell me a story.", "How is the weather?",
+    "I will call you later.", "Please send the email.",
+    "The meeting starts at nine.", "I am making a cup of coffee.",
+    "We should take a walk after lunch.", "There is a package at the door.",
+    "The train leaves in twenty minutes.", "I left the keys on the table."
+  ]
+}

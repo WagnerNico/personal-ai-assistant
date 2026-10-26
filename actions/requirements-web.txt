@@ -1,0 +1,4 @@
+# Read-only search adapter.
+ddgs>=9.16,<10
+# Browser-compatible public GET fallback with validated IP pinning.
+curl_cffi>=0.15,<0.17

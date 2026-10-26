@@ -1,0 +1,8 @@
+# Shared Apple Silicon environment for the Airis desktop app.
+-r processing/requirements.txt
+-r processing/requirements-mlx.txt
+-r input/requirements.txt
+-r output/requirements-mlx.txt
+-r ui/requirements.txt
+-r actions/requirements-web.txt
+-r actions/requirements-email.txt

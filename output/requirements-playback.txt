@@ -1,0 +1,2 @@
+# Optional: install in the environment running the assistant or UI.
+sounddevice>=0.5,<1

@@ -1,0 +1,14 @@
+{
+  "language": "English",
+  "voice_design": {
+    "text": "Hi, I'm ready whenever you are. I've checked the latest updates, organized the important details, and everything looks good so far. There are a few things worth keeping in mind, but nothing needs your immediate attention. If anything changes, I'll let you know and help you decide what to do next. For now, you can focus on what matters most, and I'll keep the rest organized in the background.",
+    "instruct": "A charismatic male personal assistant with a rich, deep, smooth and natural voice. Young adult, masculine and refined, with a strong low-register presence and the calm confidence of a modern gentleman. Clear and precise articulation with polished English pronunciation. Intelligent, composed and factual, with a relaxed conversational delivery. Steady and effortless speech with natural pacing. Professional and elegant, with subtle charm and dry understated humor."
+  },
+  "voice_clone": {
+    "reference_text": "Good evening. Everything is running normally, and there is nothing that requires your immediate attention. I have organized the remaining tasks and can walk you through them whenever you're ready."
+  },
+  "demo_texts": {
+    "1": "Hi, I'm Airis, your personal assistant. While you were asleep, I was working quietly in the background, because apparently somebody around here has to work. I've reviewed your tasks, organized the important details, and even drafted a few email responses for you. You're welcome. Nothing is urgent right now, though, so you may continue pretending that your morning coffee is a critical system dependency.",
+    "2": "Good morning. I've already checked your calendar, reviewed the latest updates, and sorted the things that actually deserve your attention. There are two meetings later today, one email you should probably answer, and three tasks you were definitely going to remember on your own. Obviously. I've prepared the relevant notes, so you can start the day looking suspiciously organized. For now, everything is under control."
+  }
+}

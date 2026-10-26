@@ -1,0 +1,4 @@
+# Optional conversion tooling for Google's original TensorFlow 1 artifact.
+# Runtime detection does not import TensorFlow or Keras.
+tensorflow==2.22.0rc0
+tf2onnx==1.17.0
